@@ -1,0 +1,21 @@
+<launch>
+  <param name="/use_sim_time" value="false">
+  </param>
+  <!-- launch rplidar s1/A2 driver -->
+  <include file="$(find scan_cutter)/launch/include/rplidar.launch">
+  </include>
+  <!-- include file="$(find scan_cutter)/launch/include/rplidar_s1.launch">
+  </include -->
+  <node name="scan_cutter" output="screen" pkg="scan_cutter" type="scan_cutter_node">
+    <param name="min_angle" value="0.78">
+    </param>
+    <param name="max_angle" value="3.14">
+    </param>
+    <param name="min_range" value="0.1">
+    </param>
+    <param name="max_range" value="12.0">
+    </param>
+  </node>
+  <node args="-d $(find scan_cutter)/rviz/rplidar.rviz" name="rviz" pkg="rviz" type="rviz">
+  </node>
+</launch>
