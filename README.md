@@ -183,7 +183,15 @@ sudo apt install ros-melodic-rplidar-ros -y
 
 ## 程序运行
 
-将程序压缩包scan_cutter.tar.gz解压到工作空间，修改文件scan_cutter.launch中的参数
+将下载仓库程序压缩包scan_cutter.zip解压到工作空间，或者clone该仓库：
+
+```bash
+git clone https://github.com/yowlings/scan_cutter.git
+```
+
+
+
+修改文件scan_cutter.launch中的参数
 
 ```xml
 <launch>
